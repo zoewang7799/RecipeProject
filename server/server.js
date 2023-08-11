@@ -4,6 +4,7 @@ const config = require('./config');
 const routes = require('./routes');
 
 const app = express();
+cost PORT = process.env.PORT || 3030;
 app.use(cors({
   origin: '*',
 }));
@@ -38,8 +39,7 @@ app.get('/create_minimal_meal_plan', routes.create_minimal_meal_plan);
 
 
 
-app.listen(config.server_port, () => {
-  console.log(`Server running at http://${config.server_host}:${config.server_port}/`)
+app.listen(PORT, () => {
+  console.log(`server started on port ${PORT}`);
 });
-
 module.exports = app;
